@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bowling Alley in Virtual Reality</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"> </script>
+    <script src="components/Shoot.js"></script>
+    
+    
+  </head>
+  <body>
+    <a-scene id="scene">
+
+      <!--Assets-->
+      
+      
+      <!--Light-->
+      <a-entity light="type: ambient; color: yellow; intensity:0.5"></a-entity>
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 4 0"
+        wasd-controls
+        look-controls="pointerLockEnabled: false"        
+      >
+        
+        <a-cursor></a-cursor>        
+      </a-entity>
+
+      <!--Bullets-->
+      <a-entity bullets gltf-model="models/bowling_ball/scene.gltf" scale="10 10 10"></a-entity>
+
+      <!--Ground-->
+      <a-plane
+        id="ground"
+        repeat="5 5"
+        position="0 1 0"
+        rotation="-90 0 0"
+        height="200"
+        width="200"
+        color="#FFFFFF"
+        static-body
+        visible="true"
+      >
+      </a-plane>
+
+      <!--Pins-->
+      <a-entity id="pin1" position="0 1.5 -10"  gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+
+      <a-entity id="pin2" position="0.5 1.5 -8" color="tomato" depth="0.2" height="0.2" width="0.2" gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+      <a-entity id="pin3" position="1 1.5 -10" color="tomato" depth="0.2" height="0.2" width="0.2" gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+
+      <a-entity id="pin3" position="-1 1.5 -10" color="tomato" depth="0.2" height="0.2" width="0.2" gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+
+      <a-entity id="pin4" position="-0.5 1.5 -8" color="tomato" depth="0.2" height="0.2" width="0.2" gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+
+      <a-entity id="pin5" position="1.5 1.5 -10" color="tomato" depth="0.2" height="0.2" width="0.2" gltf-model="models/bowling_pin/scene.gltf" scale="10 10 10" dynamic-body="mass:2"></a-entity>
+    
+      <a-box id="wall1" position="-20 1.5 -20" color="green" depth="0.2" height="50" width="10" static-body></a-box>
+
+      <a-box id="wall2" position="0 1.5 -20" color="green" depth="0.2" height="50" width="10" static-body></a-box>
+
+      <a-box id="wall3" position="20 1.5 -20" color="green" depth="0.2" height="50" width="10" static-body></a-box>
+
+      <a-box id="wall4" position="-10 1.5 -20" color="green" depth="0.2" height="50" width="10" opacity="0.2"></a-box>
+
+      <a-box id="wall5" position="10 1.5 -20" color="green" depth="0.2" height="50" width="10" opacity="0.2"></a-box>
+
+      <a-box id="wall6" position="=30 1.5 -20" color="green" depth="0.2" height="50" width="10" opacity="0.2"></a-box>          
+    </a-scene>
+  </body>
+</html>
